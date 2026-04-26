@@ -1,84 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F8E9">
+    android:orientation="vertical"
+    android:background="#FFF8F4">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:background="#F4A58A"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="22dp">
 
-        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rearing conditions"
+            android:textSize="12sp"
+            android:textColor="#7A3A22"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="4dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Log Climate"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#1B5E20"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter current rearing house conditions"
-            android:textSize="14sp"
-            android:textColor="#558B2F"
-            android:layout_marginBottom="32dp"/>
-
-        <!-- Temperature -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temperature (°C)"
-            android:textSize="14sp"
-            android:textColor="#333333"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
-
-        <EditText
-            android:id="@+id/etTemperature"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:hint="Enter temperature (10–45)"
-            android:inputType="numberDecimal"
-            android:background="@drawable/input_background"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- Humidity -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Humidity (%)"
-            android:textSize="14sp"
-            android:textColor="#333333"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
-
-        <EditText
-            android:id="@+id/etHumidity"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:hint="Enter humidity (50–95)"
-            android:inputType="numberDecimal"
-            android:background="@drawable/input_background"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_marginBottom="32dp"/>
-
-        <!-- Submit Button -->
-        <Button
-            android:id="@+id/btnSubmitClimate"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Check Conditions"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#2E7D32"/>
+            android:textColor="#3D1A0A"
+            android:fontFamily="serif"/>
 
     </LinearLayout>
-</ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="32dp">
+
+            <!-- Temperature Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <TextView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:text="🌡️"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:background="@drawable/icon_bg_peach"
+                            android:layout_marginEnd="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Temperature"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#3D1A0A"
+                                android:fontFamily="serif"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Valid range: 10°C – 45°C"
+                                android:textSize="11sp"
+                                android:textColor="#C4825A"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/etTemperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter temperature in °C"
+                        android:inputType="numberDecimal"
+                        android:textSize="14sp"
+                        android:textColor="#3D1A0A"
+                        android:background="@drawable/input_peach"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Humidity Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <TextView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:text="💧"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:background="@drawable/icon_bg_peach2"
+                            android:layout_marginEnd="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Humidity"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#3D1A0A"
+                                android:fontFamily="serif"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Valid range: 50% – 95%"
+                                android:textSize="11sp"
+                                android:textColor="#C4825A"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/etHumidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter humidity in %"
+                        android:inputType="numberDecimal"
+                        android:textSize="14sp"
+                        android:textColor="#3D1A0A"
+                        android:background="@drawable/input_peach"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/btnSubmitClimate"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Check Conditions"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#3D1A0A"
+                android:backgroundTint="#F4A58A"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

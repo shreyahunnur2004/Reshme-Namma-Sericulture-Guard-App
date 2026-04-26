@@ -14,4 +14,6 @@ interface ClimateLogDao {
 
     @Query("SELECT * FROM climate_logs WHERE batchId = :batchId ORDER BY timestamp DESC LIMIT 1")
     suspend fun getLatestLog(batchId: Int): ClimateLog?
+
+
 }

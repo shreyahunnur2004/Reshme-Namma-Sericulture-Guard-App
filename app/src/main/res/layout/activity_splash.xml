@@ -3,31 +3,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="#2E7D32">
+    android:background="#F4A58A"
+    android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🌿"
-        android:textSize="80sp"
-        android:layout_marginBottom="24dp"/>
+    <!-- Icon Box -->
+    <LinearLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/splash_icon_bg"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌾"
+            android:textSize="32sp"/>
+
+    </LinearLayout>
+
+    <!-- App Name -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reshme Namma Pride"
-        android:textSize="28sp"
-        android:textColor="#FFFFFF"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:gravity="center"/>
+        android:textColor="#3D1A0A"
+        android:gravity="center"
+        android:fontFamily="serif"
+        android:layout_marginBottom="8dp"/>
 
+    <!-- Tagline -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Smart Silk Farming"
-        android:textSize="16sp"
-        android:textColor="#C8E6C9"
-        android:layout_marginTop="8dp"/>
+        android:textSize="13sp"
+        android:textColor="#7A3A22"
+        android:letterSpacing="0.08"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Divider dot -->
+    <View
+        android:layout_width="32dp"
+        android:layout_height="3dp"
+        android:background="#7A3A22"
+        android:alpha="0.4"/>
+
+    <!-- Bottom label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading your farm..."
+        android:textSize="11sp"
+        android:textColor="#7A3A22"
+        android:layout_marginTop="32dp"
+        android:alpha="0.7"/>
 
 </LinearLayout>

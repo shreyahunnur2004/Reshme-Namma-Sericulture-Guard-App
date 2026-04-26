@@ -1,114 +1,481 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F8E9">
+    android:orientation="vertical"
+    android:background="#FFF8F4">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:background="#F4A58A"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="22dp">
 
-        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good morning"
+            android:textSize="12sp"
+            android:textColor="#7A3A22"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="4dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reshme Namma Pride"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#1B5E20"
-            android:layout_marginBottom="4dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Smart Silk Farming"
-            android:textSize="14sp"
-            android:textColor="#558B2F"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- Active Batch Card -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardActiveBatch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:background="#FFFFFF">
-
-                <TextView
-                    android:id="@+id/tvActiveBatchTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Active Batch"
-                    android:textSize="12sp"
-                    android:textColor="#888888"
-                    android:textAllCaps="true"/>
-
-                <TextView
-                    android:id="@+id/tvActiveBatchInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No active batch"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#1B5E20"
-                    android:layout_marginTop="4dp"/>
-
-                <TextView
-                    android:id="@+id/tvInstarInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="14sp"
-                    android:textColor="#558B2F"
-                    android:layout_marginTop="4dp"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Start New Batch Button -->
-        <Button
-            android:id="@+id/btnNewBatch"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="＋  Start New Batch"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#2E7D32"
-            android:layout_marginBottom="12dp"/>
-
-        <!-- View My Batches Button -->
-        <Button
-            android:id="@+id/btnViewBatches"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="📋  View My Batches"
-            android:textSize="16sp"
-            android:textColor="#2E7D32"
-            android:backgroundTint="#C8E6C9"
-            android:layout_marginBottom="20dp"/>
-
-        <!-- Climate Notice -->
-        <TextView
-            android:id="@+id/tvClimateNotice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="⚠️ Climate not logged today"
-            android:textSize="14sp"
-            android:textColor="#E65100"
-            android:background="#FFF3E0"
-            android:padding="12dp"
-            android:visibility="gone"/>
+            android:textColor="#3D1A0A"
+            android:fontFamily="serif"/>
 
     </LinearLayout>
-</ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="32dp">
+
+            <!-- Active Batch Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active Batch"
+                        android:textSize="10sp"
+                        android:textColor="#C4825A"
+                        android:letterSpacing="0.12"
+                        android:textAllCaps="true"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvActiveBatchInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No active batch"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#3D1A0A"
+                        android:fontFamily="serif"/>
+
+                    <TextView
+                        android:id="@+id/tvInstarInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="#C4825A"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Progress Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Batch Progress"
+                        android:textSize="10sp"
+                        android:textColor="#C4825A"
+                        android:letterSpacing="0.12"
+                        android:textAllCaps="true"
+                        android:layout_marginBottom="12dp"/>
+
+                    <ProgressBar
+                        android:id="@+id/progressBatch"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressTint="#F4A58A"
+                        android:progressBackgroundTint="#F2C9B8"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvProgressLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Day 0 of 20"
+                        android:textSize="12sp"
+                        android:textColor="#C4825A"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Last Climate Log Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLastLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Climate Log"
+                        android:textSize="10sp"
+                        android:textColor="#C4825A"
+                        android:letterSpacing="0.12"
+                        android:textAllCaps="true"
+                        android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Temp -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🌡️ Temp"
+                                android:textSize="11sp"
+                                android:textColor="#C4825A"/>
+
+                            <TextView
+                                android:id="@+id/tvLastTemp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="#3D1A0A"
+                                android:fontFamily="serif"
+                                android:layout_marginTop="4dp"/>
+
+                        </LinearLayout>
+
+                        <!-- Divider -->
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#F2C9B8"/>
+
+                        <!-- Humidity -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="💧 Humidity"
+                                android:textSize="11sp"
+                                android:textColor="#C4825A"/>
+
+                            <TextView
+                                android:id="@+id/tvLastHumidity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="#3D1A0A"
+                                android:fontFamily="serif"
+                                android:layout_marginTop="4dp"/>
+
+                        </LinearLayout>
+
+                        <!-- Divider -->
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#F2C9B8"/>
+
+                        <!-- Status -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Status"
+                                android:textSize="11sp"
+                                android:textColor="#C4825A"/>
+
+                            <TextView
+                                android:id="@+id/tvLastStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#3D6B50"
+                                android:layout_marginTop="4dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Climate Notice -->
+            <TextView
+                android:id="@+id/tvClimateNotice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠️  No climate logged yet for this batch"
+                android:textSize="12sp"
+                android:textColor="#7A3A22"
+                android:background="#FDE8DC"
+                android:padding="12dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"/>
+
+            <!-- Tip of the Day Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FEF0E8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌿  Tip of the Day"
+                        android:textSize="10sp"
+                        android:textColor="#7A3A22"
+                        android:letterSpacing="0.12"
+                        android:textAllCaps="true"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvTipOfDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loading tip..."
+                        android:textSize="13sp"
+                        android:textColor="#3D1A0A"
+                        android:lineSpacingExtra="4dp"
+                        android:fontFamily="serif"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Section Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actions"
+                android:textSize="10sp"
+                android:textColor="#C4825A"
+                android:textAllCaps="true"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="12dp"
+                android:layout_marginStart="4dp"/>
+
+            <!-- Start New Batch -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:id="@+id/btnNewBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <TextView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:text="＋"
+                        android:textSize="18sp"
+                        android:textColor="#C4825A"
+                        android:gravity="center"
+                        android:background="@drawable/icon_bg_peach"
+                        android:layout_marginEnd="14dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start New Batch"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#3D1A0A"
+                            android:fontFamily="serif"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Begin a new rearing cycle"
+                            android:textSize="11sp"
+                            android:textColor="#C4825A"
+                            android:layout_marginTop="2dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="#F2C9B8"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- View My Batches -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:id="@+id/btnViewBatches"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:background="@drawable/card_peach_border">
+
+                    <TextView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:text="📋"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:background="@drawable/icon_bg_peach2"
+                        android:layout_marginEnd="14dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View My Batches"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#3D1A0A"
+                            android:fontFamily="serif"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="See all rearing history"
+                            android:textSize="11sp"
+                            android:textColor="#C4825A"
+                            android:layout_marginTop="2dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="#F2C9B8"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
